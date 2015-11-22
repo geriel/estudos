@@ -38,7 +38,8 @@ showName ();
 // Result: Undefined
 // Result: José beije meu pé
 
-``
+```
+
 NOTA EXEMPLO 1: A razão para a primeira impressão ser undefined é que a variável local name foi hasteada ao topo da função
 
 Deixa eu explicar com codigo o que realmente aconteceu.
@@ -55,7 +56,7 @@ function showName () {
     console.log (name); // Result name: José beije meu pé
  }
 
-``
+```
 **"Por que você não falou antes Geriel, agora entendi a bagaça**
 
 Simples, né?
@@ -74,7 +75,7 @@ var showName = function(name, lastname) {
 }
 // Result: TypeError: showName is not a FUNCTION
 
-``
+```
 
 Se mudarmos para:
 
@@ -89,7 +90,7 @@ showName = function(name, lastname) {
 }
 // Result: showName is not defined
 
-``
+```
 
 Viu? Agora esta dizendo que a função **showName** não foi declarado.
 
@@ -238,6 +239,7 @@ Ela é bem úttil para manter a limpesa do codigo tambem.
 
 ##Bibliografia
 
+- [Pedro Araújo] (http://pedrotcaraujo.github.io/2014/12/01/funcoes-imediatas-IIFE/)
 - [Tableless] (http://tableless.com.br/elevacao-ou-javascript-hoisting/)
 - [Loopinfinito] (http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/)
 - [Javascriptbrasil] (http://javascriptbrasil.com/2013/10/11/escopo-de-variavel-e-hoisting-no-javascript-explicado/)
@@ -245,4 +247,3 @@ Ela é bem úttil para manter a limpesa do codigo tambem.
 - [Stackoverflow] (http://pt.stackoverflow.com/questions/1859/como-funcionam-closures-em-javascript)
 - [Hugobessa] (https://www.hugobessa.com.br/posts/entendendo-escopo-e-hoisting-no-javascript/)
 - [Tutsmais] (http://tutsmais.com.br/blog/javascript-2/o-que-e-iife-no-javascript/)
-- [Pedro Araújo] (http://pedrotcaraujo.github.io/2014/12/01/funcoes-imediatas-IIFE/)
