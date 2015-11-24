@@ -186,6 +186,8 @@ Fetched 4 record(s) in 37ms
 ### Pesquisar **todos** os pokemons que não são do tipo `elétrico`.###
 ```javascript
 var query = {type: {$ne: 'eletric'}}
+OU
+var query = {type: {$not: /eletric/i}}
 db.pokemons.find(query)
 {
   "_id": ObjectId("5642e3bbced08cfd55d2bc03"),
