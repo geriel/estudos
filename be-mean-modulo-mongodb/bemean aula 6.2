@@ -1,0 +1,65 @@
+
+_rand()
+Gera um numero aleatorio entre 0 e 1
+
+db.restaurantes.find().limit(1).skip( _rand() * db.restaurantes.count() )
+Pegar dados aleatorio na base restaurantes
+
+explain()
+Diz o que fez pra rodar a query
+
+db.restaurantes.find({"name": "Wtf Coffee & Tea"}).explain()
+Busca por 'name' e pode usar qualquer busca(or, and, i) para executar essa query
+
+db.restaurantes.find({"name": "Wtf Coffee & Tea"}).explain('executionStats')
+Busca informações a mais, o tempo é uma dessas informações
+
+
+Indices
+Se você efetua consulta constantemente de um dado e precisa que ela seja muito rapido, use o indice.
+
+Busca pelo ID que é um Indice
+db.restaurantes.find({"_id": ObjectId("56419762d8eab84c2c589e26")}).explain('executionStats').executionStats.executionTimeMillis
+0 Milisegundos
+
+Busca pelo Nome que não é um Indice
+db.restaurantes.find({"name": "Wtf Coffee & Tea"}).explain('executionStats').executionStats.executionTimeMillis
+21 Milisegundos
+
+db.restaurantes.createIndex({name: 1})
+Criar Indice
+
+db.restaurantes.createIndex({name: 1, other: 1})
+Criar Indice Duplo, na busca ele só vai funcionar se buscar ambos os indixes (find em ambos)
+
+
+db.restaurantes.getIndexes()
+Listar Indixes
+
+
+db.restaurantes.dropIndex({name: 1})
+remover/dropar index criado
+
+
+
+Criar um indice pro campo Name
+
+Duas querys
+Uma sem indice e uma com indice para campo único
+
+Criar um indice pra 2 campos juntos
+Duas querys, uma sem indice e uma com indice
+
+colocar o resultado com Explain
+
+
+GridFS
+Sistema de arquivos que armazena dados binários diretamente no banco
+Para ser utilizado precisa que o arquivo seja maior que 16MB
+Não coloca todo arquivo na memoria RAM
+
+
+
+
+
+
